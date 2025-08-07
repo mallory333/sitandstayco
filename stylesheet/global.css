@@ -1,0 +1,228 @@
+/* ========== VARIABLES & BASE ========== */
+
+:root {
+  --primary-color: #0b85ae;
+  --primary-color-light: #fff;
+  --text-color: #333;
+  --bg-color: #efebf1;
+  --font-heading: "Hammersmith One", sans-serif;
+  --font-serif:"Helvetica", sans-serif;
+  --font-sans: "Solway", serif;
+  --transition: 0.3s ease;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100%;
+  font-family: var(--font-serif);
+  font-size: 16px;
+  background-color: var(--bg-color);
+  line-height: 1.6;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Fonts from Google imported in HTML */
+.hammersmith-one-regular {
+  font-family: "Hammersmith One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.solway-bold {
+  font-family: "Solway", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* ========== CONTAINERS ========== */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* ========== HEADER & NAVIGATION ========== */
+.nav {
+  background: var(--primary-color-light);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.5rem 1rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.nav-menu ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: var(--primary-color);
+  font-weight: 600;
+  font-family: var(--font-sans);
+  letter-spacing: 0.05em;
+  transition: color var(--transition);
+}
+
+.nav-menu a:hover,
+.nav-menu a:focus {
+  color: var(--primary-color);
+  outline: none;
+}
+
+/* Hamburger button */
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--primary-color);
+  position: relative;
+  z-index: 1001;
+  padding: 0.25rem 0.5rem;
+  user-select: none;
+}
+
+.hamburger:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+/* ========== MOBILE NAVIGATION ========== */
+@media (max-width: 600px) {
+  .nav-menu {
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.97);
+    position: absolute;
+    top: 100%;
+    right: 1rem;
+    width: 200px;
+    border-radius: 8px;
+    padding: 1rem 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-20px);
+    transition: opacity var(--transition), transform var(--transition);
+  }
+
+  .nav-menu.show {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .nav-menu ul {
+    flex-direction: column;
+    gap: 1rem;
+    padding-left: 1.5rem;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .nav-container {
+    justify-content: flex-end;
+  }
+}
+
+/* FOOTER */
+
+.site-footer {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 2rem 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.site-footer a {
+  color: white;
+  margin: 0 0.5rem;
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  text-decoration: underline;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  text-align: left;
+}
+
+/* BACK TO TOP BUTTON */
+
+#backToTop {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  padding: 10px 15px;
+  font-size: 16px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  display: none;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+
+
+/* Hero Section Media */
+@media (min-width: 762px) {
+  .hero {
+    background-position: center 20%;
+    background-size: cover;
+  }
+}
+
+
+/* Fade Animation*/
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  will-change: opacity, transform;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
