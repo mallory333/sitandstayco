@@ -1,0 +1,250 @@
+/* HOUSE SITTING SECTION */
+
+
+.welcome {
+  padding: 5%;
+  margin: 5%;
+  align-items: center;
+  white-space: nowrap;
+  position: relative;
+  z-index: 2;
+}
+
+.welcome h1 {
+  font-size: clamp(2.5em, 6vw, 10em);
+  font-family: var(--font-heading);
+  line-height: 1;
+  color: var(--primary-color);
+}
+
+.welcome p {
+  font-size: clamp(1em, 3vw, 1.5em);
+  padding-top: 20px;
+  line-height: 1.3;
+  font-family: var(--font-serif);
+}
+
+.welcome button {
+  padding: 2%;
+  margin-top: 3%;
+  background-color: var(--primary-color);
+  color: white;
+  text-decoration: none;
+  border: none;
+  min-width: 10em;
+  cursor: pointer;
+  font-size: 1em;
+  transition: opacity 0.3s ease;
+}
+
+.welcome button:hover {
+  opacity: 0.8;
+}
+
+.welcome button a {
+  text-decoration: none;
+  color: white;
+  font-family: var(--font-serif);
+}
+
+
+.house-sitting {
+  padding: 2rem 0;
+  max-width: 900px;
+  margin: 0 auto;
+  font-family: var(--font-serif);
+  color: var(--text-color);
+  
+  border-radius: 12px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.05);
+}
+
+.house-sitting .container {
+  max-width: 800px;
+  margin: 0 auto;
+  
+}
+
+.house-sitting h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #0b85ae;
+}
+
+.house-sitting .intro {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.house-sitting h3 {
+  margin-top: 2rem;
+  font-size: 1.25rem;
+  color: #444;
+}
+
+.house-sitting ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  margin-top: 0.5rem;
+  color: #555;
+}
+
+.house-sitting li {
+  margin-bottom: 0.5rem;
+}
+
+.house-sitting .pricing ul,
+.house-sitting .included ul {
+  background-color: var(--primary-color-light);
+  border-radius: 1rem;
+  padding: 1rem 1.5rem;
+}
+
+.house-sitting .cta {
+  margin-top: 2.5rem;
+  text-align: center;
+}
+
+.house-sitting .btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: #0b85ae;
+  color: #fff;
+  border-radius: 2rem;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.house-sitting .btn:hover {
+  background-color: #f4eff4;
+  color: #0b85ae;
+}
+
+/* Responsive Adjustments */
+@media (min-width: 600px) {
+  .house-sitting h2 {
+    font-size: 2.25rem;
+  }
+
+  .house-sitting .intro {
+    font-size: 1.1rem;
+  }
+
+  .house-sitting .btn {
+    font-size: 1rem;
+  }
+}
+
+/* Gallery Styles */
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin: 2rem 0;
+}
+
+.gallery-item {
+  flex: 1 1 calc(33% - 20px);
+  max-width: 250px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.gallery-item:hover {
+  transform: scale(1.05);
+}
+
+/* PRICE LIST */
+
+.price-list {
+  margin: 2rem auto;
+  max-width: 900px;
+  padding: 1rem;
+}
+
+.price-cards {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  background-color: var(--primary-color-light);
+  border-radius: 12px;
+  padding: 2rem 1rem;
+  width: 250px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  text-align: center;
+  cursor: default;
+  font-family: var(--font-serif);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+.card h3 {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: var(--primary-color);
+}
+
+.card p {
+  font-size: 1rem;
+  line-height: 1.4;
+  margin-top: 0.5rem;
+}
+
+
+
+
+/* Responsiveness */
+
+@media (max-width: 768px) {
+  .price-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
+    margin-bottom: 1rem;
+  }
+}
+
+
+@media (min-width: 320px) {
+  .gallery-item {
+    flex: 0 1 calc(50% - 1rem);
+  }
+}
+
+
+@media (min-width: 769px) {
+  .gallery-item {
+    flex: 0 1 calc(25% - 1rem); 
+  }
+}
+
+
+
+
